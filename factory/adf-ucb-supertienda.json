@@ -1,0 +1,9 @@
+{
+	"name": "adf-ucb-supertienda",
+	"location": "chilecentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1249ab96-48f8-475d-b6a5-d83cc2562553",
+		"tenantId": "cc28633f-12b8-46cb-bc15-951dae239b4d"
+	}
+}
