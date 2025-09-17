@@ -1,5 +1,5 @@
 {
-	"name": "df_bronze_customers",
+	"name": "df_bronze_products",
 	"properties": {
 		"folder": {
 			"name": "Bronze"
@@ -9,7 +9,7 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "Costumers_csv",
+						"referenceName": "Products_csv",
 						"type": "DatasetReference"
 					},
 					"name": "source1"
@@ -18,7 +18,7 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "ds_sql_bronze_customers",
+						"referenceName": "ds_sql_bronze_products",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
@@ -27,11 +27,10 @@
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          CustomerID as string,",
-				"          FirstName as string,",
-				"          LastName as string,",
-				"          Country as string,",
-				"          Score as string",
+				"          ProductID as string,",
+				"          Product as string,",
+				"          Category as string,",
+				"          Price as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
@@ -39,11 +38,10 @@
 				"source1 sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     input(",
-				"          CustomerID as string,",
-				"          FirstName as string,",
-				"          LastName as string,",
-				"          Country as string,",
-				"          Score as integer",
+				"          ProductID as string,",
+				"          Product as string,",
+				"          Category as string,",
+				"          Price as string",
 				"     ),",
 				"     deletable:false,",
 				"     insertable:true,",
@@ -54,11 +52,10 @@
 				"     skipDuplicateMapOutputs: true,",
 				"     errorHandlingOption: 'stopOnFirstError',",
 				"     mapColumn(",
-				"          CustomerID,",
-				"          FirstName,",
-				"          LastName,",
-				"          Country,",
-				"          Score",
+				"          ProductID,",
+				"          Product,",
+				"          Category,",
+				"          Price",
 				"     )) ~> sink1"
 			]
 		}
